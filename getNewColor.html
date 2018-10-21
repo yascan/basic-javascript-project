@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="getNewColor.css">
+    <title>Random color</title>
+</head>
+<body>
+    <div class="color">
+        <span id="hex">#e74c3c</span>
+        <button onclick="getNewColor()">Get New Color</button>
+    </div>
+    <script type="text/javascript">
+        function getNewColor(){
+            var symbols,color;
+            symbols="0123456789ABCDEF";
+            color="#";
+
+            for(var i=0;i<6;i++){
+                color = color + symbols[Math.floor(Math.random() * 16)];
+            }
+            document.body.style.background = color;
+            document.getElementById("hex").innerHTML=color;
+        }
+    </script>
+</body>
+</html>
